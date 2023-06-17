@@ -9,15 +9,16 @@ const initialValue = {
 };
 
 const userReducer = (state = initialValue, action) => {
+    //evaluamos el tipo de accion y como se retornara
   switch (action.type) {
     case userTypes.CREATE_USER:
 
       return {
         ...state,
         user: {
-          ...action.payload.user
+            ...action.payload.user
         },
-        error: action.payload.error 
+        error: action.payload.error
       };
 
     default:
