@@ -1,7 +1,7 @@
 //-funcion sincrona crea el objeto action
 //-funcion asincrona hace la peticion, interatua con la API-DB, cuando eso suceda con exito, dispara la funcion sincrona
 //la funcion creadora de los actions
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { auth } from "../../Firebase/firebaseConfig";
 import { userTypes } from "../types/userTypes";
 
@@ -39,5 +39,30 @@ const registerActionSync = (newUser, error) => {
       user: newUser,
       error: error,
     },
+  };
+};
+
+export const logoutActionAsync = () => {
+  return async (dispatch) => {
+    let errors = null;
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.log(error);
+      errors = {
+        error: true,
+        code: error.code,
+        message: error.message,
+      };
+    } finally {
+      dispatch(logoutActionSync(errors))
+    }
+  }
+}
+
+const logoutActionSync = (error) => {
+  return {
+    type: userTypes.LOGOUT_USER,
+    payload: error
   };
 };
