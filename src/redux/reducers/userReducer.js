@@ -29,6 +29,14 @@ const userReducer = (state = initialValue, action) => {
           error: action.payload
         }
 
+        case userTypes.LOGGIN_USER:
+          return {
+            ...state,
+            user: {
+              ...action.payload
+            }
+          }
+
     default:
       return {
         ...state

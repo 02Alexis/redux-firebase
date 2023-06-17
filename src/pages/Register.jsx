@@ -7,6 +7,7 @@ import * as yup from "yup";
 import fileUpLoad from "../services/fileUpLoad";
 import { useDispatch } from "react-redux";
 import { registerActionAsync } from "../redux/actions/userActions";
+import { Link } from "react-router-dom";
 
 const schema = yup.object({
   name: yup.string().required("Por favor ingresar su nombre"),
@@ -112,6 +113,8 @@ function Register() {
       <Button variant="primary" type="submit">
         Register
       </Button>
+      
+    <p>¿Ya tienes una Cuenta Creada? <Link to="/">Inicia sesion con tu cuenta!</Link> </p>
     </Form>
   );
 }
