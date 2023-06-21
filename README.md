@@ -27,7 +27,9 @@
 * Luego de iniciar sesion en consola dejara de ejecutarse el anterior comando y nos aparecera un token, lo copiamos
   ![imagen](https://github.com/02Alexis/miniBackend-app-pizza/assets/99287560/51dbd8c8-084f-45d1-9416-9f56ab25df34)
 
-* y ejecutamos el siguiente comando `firebase init --token "aqui va tu token"`, te debe mostrar lo siguiente, escribes Y``
+  # 👀 guarden el token que les aparece, sera importate cuando quieran volver a desplegar un nuevo proyecto
+
+* continuacion... ejecutamos el siguiente comando `firebase init --token "aqui va tu token"`, te debe mostrar lo siguiente, escribes Y``
   
   ![imagen](https://github.com/02Alexis/miniBackend-app-pizza/assets/99287560/321bfc51-6b22-4abf-8342-4274c1896141)
 
